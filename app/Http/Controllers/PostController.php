@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function view(){
+        $posts=Post::all();
+        return view('view',compact('posts'));
+    }
 
     public function index(){
         $posts=Post::all();
-        return view('posts.index',compact('posts'));
+        return view('posts.index',compact('posts'))->with('showSearch', false);;
     }
 
     public function show(Post $post){
@@ -53,7 +57,7 @@ class PostController extends Controller
 
 
     // Retourner la vue avec les données de l'article
-    return view('posts.edit', compact('post'));
+    return view('posts.edit', compact('post'))->with('showSearch', false);;
 }
 
     // 6. Mettre à jour un article

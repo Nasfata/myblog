@@ -26,7 +26,7 @@
                 <tr>
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->title }}</td>
-                    <td>{{ e(Str::limit($post->content, 50)) }}</td>
+                    <td>{{ Str::limit($post->content, 50) }}</td>
                     <td>
                         <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info btn-sm">Voir</a>
                         <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-warning btn-sm">Modifier</a>

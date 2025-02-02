@@ -54,7 +54,7 @@ Route::get('/saluer/{nom}', function ($nom) {
             return view("index");
         });
 
-        Route::get('view', [PostController::class, 'index'])->name('posts.index');
+        Route::get('view', [PostController::class, 'view'])->name('view');
         Route::get('show/{post}', [PostController::class, 'show'])->name('posts.show');
 
         Route::get('navbar', function () {
